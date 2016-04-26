@@ -3,6 +3,7 @@ package com.samz.cordova.mixpanel;
 import android.content.Context;
 import android.text.TextUtils;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import com.mixpanel.android.mpmetrics.Tweak;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -15,6 +16,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MixpanelPlugin extends CordovaPlugin {
+
+    // Tweaks
+    private static Tweak<Boolean> showAds = MixpanelAPI.booleanTweak("Show ads", true);
 
     private static String LOG_TAG = "MIXPANEL PLUGIN";
     private static MixpanelAPI mixpanel;
@@ -45,6 +49,7 @@ public class MixpanelPlugin extends CordovaPlugin {
         PEOPLE_SET("people_set"),
         PEOPLE_SET_ONCE("people_set_once");
 
+
         private final String name;
         private static final Map<String, Action> lookup = new HashMap<String, Action>();
 
@@ -69,6 +74,10 @@ public class MixpanelPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext cbCtx) {
+        if (action == "tweaks") {
+          return handleTweaks(args, cbCtx);
+        }
+
         Action act = Action.get(action);
 
         if (act == null){
@@ -134,6 +143,13 @@ public class MixpanelPlugin extends CordovaPlugin {
     //  - return false:
     //     - arguments were wrong
     //************************************************
+
+    private boolean handleTweaks(JSONArray args, final CallbackContext cbCtx) {
+        JSONObject tweaks = new JSONObject();
+        tweaks.put("showAds", showAds.get());
+        cbCtx.success(tweaks);
+        return true;
+    }
 
     private boolean handleAlias(JSONArray args, final CallbackContext cbCtx) {
         String aliasId = args.optString(0, "");
