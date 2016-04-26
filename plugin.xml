@@ -71,7 +71,7 @@
         <framework src="CFNetwork.framework"/>
         <framework src="Security.framework"/>
 
-        <framework src="src/ios/Mixpanel.framework" custom="true" />
+        <framework src="src/ios/Mixpanel.framework" weak="true" custom="true" />
 
     </platform>
 
