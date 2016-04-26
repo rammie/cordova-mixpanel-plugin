@@ -32,7 +32,7 @@
 
         <!-- Plugin files -->
         <source-file src="src/android/MixpanelPlugin.java" target-dir="src/android"/>
-        <source-file src="src/libs/mixpanel-android-4.7.0.jar" target-dir="libs/"/>
+        <framework src="com.mixpanel.android:mixpanel-android:4.8.0"/>
 
         <!-- AndroidManifest.xml -->
         <!-- see https://github.com/mixpanel/mixpanel-android/blob/master/src/main/AndroidManifest.xml -->
@@ -210,10 +210,10 @@
         <js-module src="src/browser/MixpanelProxy.js" name="MixpanelProxy">
             <runs />
         </js-module>
-        
+
         <asset src="src/browser/mixpanel-js-lib.js" target="plugins/cordova-plugin-mixpanel/src/browser/mixpanel-js-lib.js"/>
-        
-        
+
+
     </platform>
 
 </plugin>
