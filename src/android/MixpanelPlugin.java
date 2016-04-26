@@ -146,7 +146,13 @@ public class MixpanelPlugin extends CordovaPlugin {
 
     private boolean handleTweaks(JSONArray args, final CallbackContext cbCtx) {
         JSONObject tweaks = new JSONObject();
-        tweaks.put("showAds", showAds.get());
+        try {
+            tweaks.put("showAds", showAds.get());
+        }
+        catch(Exception e) {
+            this.error(cbCtx, "Unable to fetch tweaks.");
+            return false;
+        }
         cbCtx.success(tweaks);
         return true;
     }
