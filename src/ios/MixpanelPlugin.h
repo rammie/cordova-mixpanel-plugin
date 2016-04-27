@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
-#import <Mixpanel/Mixpanel.h>
+#import "Mixpanel.h"
+#import "Mixpanel/MPTweakInline.h"
 
 
 @interface MixpanelPlugin : CDVPlugin
@@ -23,6 +24,7 @@
 -(void)reset:(CDVInvokedUrlCommand*)command;
 -(void)showSurvey:(CDVInvokedUrlCommand*)command;
 -(void)track:(CDVInvokedUrlCommand*)command;
+-(void)tweaks:(CDVInvokedUrlCommand*)command;
 
 
 // PEOPLE API

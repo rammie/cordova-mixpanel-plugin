@@ -172,6 +172,26 @@
 }
 
 
+-(void)tweaks:(CDVInvokedUrlCommand*)command;
+{
+    CDVPluginResult* pluginResult = nil;
+    Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
+
+    if (mixpanelInstance == nil)
+    {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Mixpanel not initialized"];
+    }
+    else
+    {
+        NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:1];
+        [message setObject:MPTweakValue(@"Show Ads", NO) forKey:@"showAds"];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:message];
+        [pluginResult setKeepCallbackAsBool:YES];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+    }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 // PEOPLE API
 
 
