@@ -135,6 +135,7 @@
         <header-file src="src/ios/Mixpanel/UIView+MPHelpers.h" target-dir="Mixpanel"/>
         <header-file src="src/ios/Mixpanel/UIViewController+AutomaticEvents.h" target-dir="Mixpanel"/>
         <header-file src="src/ios/Mixpanel/_MPTweakBindObserver.h" target-dir="Mixpanel"/>
+
         <source-file src="src/ios/Mixpanel/MPABTestDesignerChangeRequestMessage.m" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/MPABTestDesignerChangeResponseMessage.m" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/MPABTestDesignerClearRequestMessage.m" target-dir="Mixpanel"/>
@@ -207,30 +208,34 @@
         <source-file src="src/ios/Mixpanel/UIView+MPHelpers.m" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/UIViewController+AutomaticEvents.m" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/_MPTweakBindObserver.m" target-dir="Mixpanel"/>
-        <source-file src="src/ios/Mixpanel/MPNotification~ipad.storyboard" target-dir="Mixpanel"/>
-        <source-file src="src/ios/Mixpanel/MPNotification~iphonelandscape.storyboard" target-dir="Mixpanel"/>
-        <source-file src="src/ios/Mixpanel/MPNotification~iphoneportrait.storyboard" target-dir="Mixpanel"/>
-        <source-file src="src/ios/Mixpanel/MPSurvey.storyboard" target-dir="Mixpanel"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/Contents.json" target-dir="Mixpanel/Media.xcassets"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight@2x.png" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark.png" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark@2x.png" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad@2x.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad@3x.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard.png" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard@2x.png" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo.png" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
-        <source-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo@2x.png" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
+
+        <resource-file src="src/ios/Mixpanel/MPNotification~ipad.storyboard" target-dir="Mixpanel"/>
+        <resource-file src="src/ios/Mixpanel/MPNotification~iphonelandscape.storyboard" target-dir="Mixpanel"/>
+        <resource-file src="src/ios/Mixpanel/MPNotification~iphoneportrait.storyboard" target-dir="Mixpanel"/>
+        <resource-file src="src/ios/Mixpanel/MPSurvey.storyboard" target-dir="Mixpanel"/>
+
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/Contents.json" target-dir="Mixpanel/Media.xcassets"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png" target-dir="Mixpanel/Media.xcassets/MPArrowLeft.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight@2x.png" target-dir="Mixpanel/Media.xcassets/MPArrowRight.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark.png" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCheckmark.imageset/MPCheckmark@2x.png" target-dir="Mixpanel/Media.xcassets/MPCheckmark.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad@2x.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPCloseBtn.imageset/MPCloseBtnIpad@3x.png" target-dir="Mixpanel/Media.xcassets/MPCloseBtn.imageset"/>
+
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard.png" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPDismissKeyboard.imageset/MPDismissKeyboard@2x.png" target-dir="Mixpanel/Media.xcassets/MPDismissKeyboard.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/Contents.json" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo.png" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
+        <resource-file src="src/ios/Mixpanel/Media.xcassets/MPLogo.imageset/MPLogo@2x.png" target-dir="Mixpanel/Media.xcassets/MPLogo.imageset"/>
+
         <source-file src="src/ios/Mixpanel/module.modulemap" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/snapshot_config.json" target-dir="Mixpanel"/>
         <source-file src="src/ios/Mixpanel/test_variant.json" target-dir="Mixpanel"/>
