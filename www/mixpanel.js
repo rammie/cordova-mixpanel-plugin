@@ -70,6 +70,9 @@ mixpanel.track = function(eventName, eventProperties, onSuccess, onFail) {
   exec(onSuccess, onFail, 'Mixpanel', 'track', [eventName, eventProperties]);
 };
 
+mixpanel.tweaks = function(onSuccess, onFail) {
+  exec(onSuccess, onFail, 'Mixpanel', 'tweaks', []);
+};
 
 // PEOPLE API
 
