@@ -13,7 +13,6 @@
 
 // MIXPANEL API
 
-- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
 //@see https://mixpanel.com/site_media/doctyl/uploads/iPhone-spec/Classes/Mixpanel/index.html
 -(void)alias:(CDVInvokedUrlCommand*)command;

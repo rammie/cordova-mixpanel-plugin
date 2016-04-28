@@ -6,12 +6,6 @@
 // MIXPANEL API
 
 
-- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel.people addPushDeviceToken:deviceToken];
-}
-
-
 -(void)alias:(CDVInvokedUrlCommand*)command;
 {
     CDVPluginResult* pluginResult = nil;
