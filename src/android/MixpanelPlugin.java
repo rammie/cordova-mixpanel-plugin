@@ -1,4 +1,4 @@
-package com.samz.cordova.mixpanel;
+package com.propel.cordova.mixpanel;
 
 import android.content.Context;
 import android.text.TextUtils;
