@@ -226,7 +226,7 @@ public class MixpanelPlugin extends CordovaPlugin {
 
 
     private boolean handleShowSurvey(JSONArray args, final CallbackContext cbCtx) {
-        MixpanelAPI.People.showSurveyIfAvailable();
+        MixpanelAPI.People.showSurveyIfAvailable(this.cordova.getActivity());
         cbCtx.success();
         return true;
     }
