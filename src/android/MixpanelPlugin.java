@@ -226,8 +226,9 @@ public class MixpanelPlugin extends CordovaPlugin {
 
 
     private boolean handleShowSurvey(JSONArray args, final CallbackContext cbCtx) {
-        this.error(cbCtx, "not implemented");
-        return false;
+        MixpanelAPI.People.showSurveyIfAvailable();
+        cbCtx.success();
+        return true;
     }
 
 
@@ -299,7 +300,7 @@ public class MixpanelPlugin extends CordovaPlugin {
     }
 
     private boolean handlePeopleShowNotification(JSONArray args, final CallbackContext cbCtx) {
-        mixpanel.getPeople().showNotificationIfAvailable();
+        mixpanel.getPeople().showNotificationIfAvailable(this.cordova.getActivity());
         cbCtx.success();
         return true;
     }
