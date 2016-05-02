@@ -315,7 +315,7 @@
     }
     else
     {
-        [mixpanel showNotification];
+        [mixpanelInstance showNotification];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
