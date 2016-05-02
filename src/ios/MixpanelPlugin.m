@@ -92,6 +92,7 @@
     NSString* token = [arguments objectAtIndex:0];
 
     Mixpanel* mixpanelInstance = [Mixpanel sharedInstanceWithToken:token];
+    mixpanelInstance.showNotificationOnActive = NO;
     [mixpanelInstance setFlushInterval:60];
 
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
@@ -183,8 +184,9 @@
     }
     else
     {
-        NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:1];
-        [message setObject:[NSNumber numberWithBool:MPTweakValue(@"Show Ads", NO)] forKey:@"showAds"];
+        NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:2];
+        [message setObject:[NSNumber numberWithBool:MPTweakValue(@"Custom CSS", @"/* Custom CSS */")] forKey:@"css"];
+        [message setObject:[NSNumber numberWithBool:MPTweakValue(@"Custom JS", @"/* Custom JS */")] forKey:@"js"];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:message];
         [pluginResult setKeepCallbackAsBool:YES];
     }
@@ -296,6 +298,25 @@
     else
     {
         [mixpanelInstance.people setOnce:peopleProperties];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+@end
+
+-(void)people_showNotification:(CDVInvokedUrlCommand*)command;
+{
+    CDVPluginResult* pluginResult = nil;
+    Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
+
+    if (mixpanelInstance == nil)
+    {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Mixpanel not initialized"];
+    }
+    else
+    {
+        [mixpanel showNotification];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

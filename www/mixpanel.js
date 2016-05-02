@@ -122,6 +122,9 @@ mixpanel.people.setPushId = function(pushId, onSuccess, onFail) {
   exec(onSuccess, onFail, 'Mixpanel', 'people_setPushId', [pushId]);
 };
 
+mixpanel.people.showNotification = function(onSuccess, onFail) {
+  exec(onSuccess, onFail, 'Mixpanel', 'people_showNotification', []);
+};
 
 // Exports
 

@@ -46,6 +46,7 @@ public class MixpanelPlugin extends CordovaPlugin {
         PEOPLE_IDENTIFY("people_identify"),
         PEOPLE_INCREMENT("people_increment"),
         PEOPLE_SET_PUSH_ID("people_setPushId"),
+        PEOPLE_SHOW_NOTIFICATION("people_showNotification"),
         PEOPLE_SET("people_set"),
         PEOPLE_SET_ONCE("people_set_once");
 
@@ -119,6 +120,8 @@ public class MixpanelPlugin extends CordovaPlugin {
                 return handlePeopleSet(args, cbCtx);
             case PEOPLE_SET_ONCE:
                 return handlePeopleSetOnce(args, cbCtx);
+            case PEOPLE_SHOW_NOTIFICATION:
+                return handlePeopleShowNotification(args, cbCtx);
             default:
                 this.error(cbCtx, "unknown action");
                 return false;
@@ -291,6 +294,12 @@ public class MixpanelPlugin extends CordovaPlugin {
     private boolean handlePeopleSetPushId(JSONArray args, final CallbackContext cbCtx) {
         String pushId = args.optString(0);
         mixpanel.getPeople().setPushRegistrationId(pushId);
+        cbCtx.success();
+        return true;
+    }
+
+    private boolean handlePeopleShowNotification(JSONArray args, final CallbackContext cbCtx) {
+        mixpanel.getPeople().showNotificationIfAvailable();
         cbCtx.success();
         return true;
     }
