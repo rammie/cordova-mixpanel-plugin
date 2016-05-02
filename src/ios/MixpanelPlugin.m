@@ -303,7 +303,6 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-@end
 
 -(void)people_showNotification:(CDVInvokedUrlCommand*)command;
 {
