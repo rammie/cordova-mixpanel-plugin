@@ -18,8 +18,8 @@ import org.json.JSONObject;
 public class MixpanelPlugin extends CordovaPlugin {
 
     // Tweaks
-    private static Tweak<Boolean> tweaksJSON = MixpanelAPI.stringTweak("Tweaks JSON", "{}");
-    private static Tweak<Boolean> customCSS = MixpanelAPI.stringTweak("Custom CSS", "/* Custom CSS */");
+    private static Tweak<String> tweaksJSON = MixpanelAPI.stringTweak("Tweaks JSON", "{}");
+    private static Tweak<String> customCSS = MixpanelAPI.stringTweak("Custom CSS", "/* Custom CSS */");
 
     private static String LOG_TAG = "MIXPANEL PLUGIN";
     private static MixpanelAPI mixpanel;
