@@ -185,8 +185,8 @@
     else
     {
         NSMutableDictionary* message = [NSMutableDictionary dictionaryWithCapacity:2];
-        [message setValue:MPTweakValue(@"Custom CSS", @"/* Custom CSS */") forKey:@"css"];
-        [message setValue:MPTweakValue(@"Tweaks JSON", @"/* Custom JS */") forKey:@"js"];
+        [message setValue:MPTweakValue(@"Custom CSS", @"/* Custom CSS */") forKey:@"customCSS"];
+        [message setValue:MPTweakValue(@"Tweaks JSON", @"/* Custom JS */") forKey:@"tweaksJSON"];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:message];
         [pluginResult setKeepCallbackAsBool:YES];
     }
