@@ -18,7 +18,8 @@ import org.json.JSONObject;
 public class MixpanelPlugin extends CordovaPlugin {
 
     // Tweaks
-    private static Tweak<Boolean> showAds = MixpanelAPI.booleanTweak("Show ads", true);
+    private static Tweak<Boolean> tweaksJSON = MixpanelAPI.stringTweak("Tweaks JSON", "{}");
+    private static Tweak<Boolean> customCSS = MixpanelAPI.stringTweak("Custom CSS", "/* Custom CSS */");
 
     private static String LOG_TAG = "MIXPANEL PLUGIN";
     private static MixpanelAPI mixpanel;
@@ -150,7 +151,8 @@ public class MixpanelPlugin extends CordovaPlugin {
     private boolean handleTweaks(JSONArray args, final CallbackContext cbCtx) {
         JSONObject tweaks = new JSONObject();
         try {
-            tweaks.put("showAds", showAds.get());
+            tweaks.put("tweaksJSON", tweaksJSON.get());
+            tweaks.put("customCSS", customCSS.get());
         }
         catch(Exception e) {
             this.error(cbCtx, "Unable to fetch tweaks.");
