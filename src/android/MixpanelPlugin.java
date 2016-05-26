@@ -39,6 +39,7 @@ public class MixpanelPlugin extends CordovaPlugin {
         RESET("reset"),
         SHOW_SURVEY("showSurvey"),
         TRACK("track"),
+        TRACK("tweaks"),
 
 
         // PEOPLE API
@@ -76,10 +77,6 @@ public class MixpanelPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext cbCtx) {
-        if (action == "tweaks") {
-          return handleTweaks(args, cbCtx);
-        }
-
         Action act = Action.get(action);
 
         if (act == null){
@@ -111,6 +108,8 @@ public class MixpanelPlugin extends CordovaPlugin {
                 return handleShowSurvey(args, cbCtx);
             case TRACK:
                 return handleTrack(args, cbCtx);
+            case TWEAKS:
+                return handleTweaks(args, cbCtx);
             case PEOPLE_IDENTIFY:
                 return handlePeopleIdentify(args, cbCtx);
             case PEOPLE_INCREMENT:
