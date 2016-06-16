@@ -14,6 +14,11 @@
     NSString* aliasId = [arguments objectAtIndex:0];
     NSString* originalId = [arguments objectAtIndex:1];
 
+    if (!originalId || [originalId length] == 0)
+    {
+        originalId = mixpanelInstance.distinctId;
+    }
+
     if (mixpanelInstance == nil)
     {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Mixpanel not initialized"];
