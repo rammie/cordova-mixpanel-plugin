@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Mixpanel/MixpanelPeople.h>
+#import "MixpanelPeople.h"
 
 #if TARGET_OS_TV
     #define MIXPANEL_TVOS_EXTENSION 1
@@ -157,10 +157,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- 
+
  @abstract
  Determines whether a valid survey is available to show to the user.
- 
+
  @discussion
  If we haven't fetched the surveys yet, this will return NO. Otherwise
  it will return yes if there is at least one survey available.
@@ -169,11 +169,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- 
+
  @abstract
  Returns a list of available surveys. You can then call <code>showSurveyWithID:</code>
  and pass in <code>survey.ID</code>
- 
+
  @discussion
  If we haven't fetched the surveys yet, this will return nil.
  */
@@ -221,14 +221,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- 
+
  @abstract
- Controls whether to automatically send the client IP Address as part of 
+ Controls whether to automatically send the client IP Address as part of
  event tracking. With an IP address, geo-location is possible down to neighborhoods
  within a city, although the Mixpanel Dashboard will just show you city level location
  specificity. For privacy reasons, you may be in a situation where you need to forego
  effectively having access to such granular location information via the IP Address.
- 
+
  @discussion
  Defaults to YES.
  */
@@ -236,12 +236,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- 
+
  @abstract
- Controls whether to enable the visual A/B test designer on mixpanel.com, you will 
- be unable to edit A/B tests with this disabled, however previously created A/B 
+ Controls whether to enable the visual A/B test designer on mixpanel.com, you will
+ be unable to edit A/B tests with this disabled, however previously created A/B
  tests and their variants will still be delivered.
- 
+
  @discussion
  Defaults to YES.
  */
@@ -261,13 +261,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @property
- 
+
  @abstract
  If set, determines the background color of mini notifications.
 
  @discussion
- If this isn't set, we default to either the color of the UINavigationBar of the top 
- UINavigationController that is showing when the notification is presented, the 
+ If this isn't set, we default to either the color of the UINavigationBar of the top
+ UINavigationController that is showing when the notification is presented, the
  UINavigationBar default color for the app or the UITabBar default color.
  */
 @property (atomic, strong, nullable) UIColor *miniNotificationBackgroundColor;
@@ -616,10 +616,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @method
- 
+
  @abstract
  Calls flush, then optionally archives and calls a handler when finished.
- 
+
  @discussion
  When calling <code>flush</code> manually, it is sometimes important to verify
  that the flush has finished before further action is taken. This is
