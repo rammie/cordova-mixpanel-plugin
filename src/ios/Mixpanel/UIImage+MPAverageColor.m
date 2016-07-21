@@ -40,7 +40,7 @@
     const uint8_t *imageDataBuffer = CFDataGetBytePtr(imageData);
 
     char colorIndices[kNumberOfHexColors];
-    memset(colorIndices, 0, kNumberOfHexColors * sizeof(char))
+    memset(colorIndices, 0, kNumberOfHexColors * sizeof(char));
 
     for (size_t rowIndex = kImageStartRow; rowIndex < kImageStartRow + kNumberOfRows; rowIndex++) {
         const uint8_t *row = imageDataBuffer + kBytesPerRow * rowIndex;
