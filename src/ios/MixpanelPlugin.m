@@ -12,12 +12,7 @@
     Mixpanel* mixpanelInstance = [Mixpanel sharedInstance];
     NSArray* arguments = command.arguments;
     NSString* aliasId = [arguments objectAtIndex:0];
-    NSString* originalId = [arguments objectAtIndex:1];
-
-    if (!originalId || [originalId length] == 0)
-    {
-        originalId = mixpanelInstance.distinctId;
-    }
+    NSString* originalId = mixpanelInstance.distinctId;
 
     if (mixpanelInstance == nil)
     {
